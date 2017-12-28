@@ -5,7 +5,7 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import reducer from './reducer';
 import App from './components/App';
-import Voting from './components/Voting';
+import {VotingContainer} from './components/Voting';
 import Results from './components/Results';
 
 const store = createStore(reducer);
@@ -23,7 +23,7 @@ const pair = ['Trainspotting', '28 Days Later'];
 
 const routes = <Route component={App}>
   <Route path="/results" component={Results} />
-  <Route path="/" component={Voting} />
+  <Route path="/" component={VotingContainer} />
 </Route>;
 
 ReactDOM.render(
