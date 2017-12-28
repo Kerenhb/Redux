@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, hashHistory} from 'react-router-3';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
+import io from 'socket.io-client';
 import reducer from './reducer';
 import App from './components/App';
 import {VotingContainer} from './components/Voting';
@@ -19,7 +20,7 @@ store.dispatch({
   }
 });
 
-const pair = ['Trainspotting', '28 Days Later'];
+const socket = io(`${location.protocol}//${location.hostname}:8090`);
 
 const routes = <Route component={App}>
   <Route path="/results" component={ResultsContainer} />
