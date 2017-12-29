@@ -12,6 +12,9 @@ module.exports = {
         exclude: /node_modules/,
         loader: ['react-hot-loader/webpack', 
                 'babel-loader']
+      }, {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader!autoprefixer-loader?browsers=last 2 versions'
       }]
     },
     resolve: {
